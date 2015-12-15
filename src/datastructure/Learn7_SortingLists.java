@@ -4,10 +4,10 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class Learn7_SortingListss {
+public class Learn7_SortingLists {
 	
 	@Test 
-	public void testHashMapArrayList() {
+	public void testHashMapArrayLists() {
 		LinkedList <String> v = new LinkedList<String>();
 		v.add("tiger");
 		v.add("cat");
