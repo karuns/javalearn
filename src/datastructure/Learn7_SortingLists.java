@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class Learn7_SortingLists {
+public class Learn7_SortingListss {
 	
 	@Test 
 	public void testHashMapArrayList() {
