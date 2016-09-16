@@ -1,9 +1,9 @@
 package abstraction;
 
-public class Cat implements Reptile {
+abstract class Cat implements Reptile {
 
 	public void dotheyEgg() {
-		System.out.println("Do they Egg");
+		System.out.println("Do cat they Egg");
 	}
 
 	public void makeSound() {

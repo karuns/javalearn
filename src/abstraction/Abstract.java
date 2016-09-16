@@ -6,8 +6,8 @@ public class Abstract {
 	@Test
 	public void LearnAbstract() {
 		Dog d = new Dog();
-		d.dotheyEgg();
-		Cat  c = new Cat();
-		c.dotheyEgg();
+		d.dotheyEgg("also");
+		cd  c = new cd();
+//		c.dotheyEgg();
 	}
 }

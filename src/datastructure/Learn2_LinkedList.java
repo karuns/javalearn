@@ -15,11 +15,12 @@ public class Learn2_LinkedList {
 		v.add("A");
 		v.add("B");
 		System.out.println(v.toString());
-		System.out.println(v.get(1));
+		System.out.println(v.get(0));
 		v.remove("C");
 		System.out.println(v.toString());
 		v.remove("B");
 		System.out.println(v.toString());
+		
 		
 	}
 	

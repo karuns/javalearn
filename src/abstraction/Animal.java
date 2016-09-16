@@ -1,5 +1,5 @@
 package abstraction;
 
-public interface Animal {
+public interface  Animal {
      void makeSound();
 }

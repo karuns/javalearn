@@ -2,8 +2,8 @@ package abstraction;
 
 public class Dog implements Mammal, Reptile {
 
-	public void dotheyEgg() {
-		System.out.println("Do they Egg");
+	public void dotheyEgg(String a) {
+		System.out.println(a+"Do dog they Egg");
 	}
 
 	public void makeSound() {

@@ -12,4 +12,8 @@ public class Animal {
 	public void whichAnimal() {
 		System.out.println("Some Animal");
 	}
+	
+	public void food() {
+		
+	}
 }
