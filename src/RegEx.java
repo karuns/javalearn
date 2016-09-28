@@ -16,12 +16,12 @@ public class RegEx {
 	    System.out.println(m.group(2)); 
 	}
 	
-	@Test
-	public void regexFirst2() {
-		String line = "mkyong-100@yahoo.com";
-	    String pattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$;";
-	    Matcher m = Pattern.compile(pattern).matcher(line);
-	    m.find();
-	    System.out.println(m.matches());
-	}
+//	@Test
+//	public void regexFirst2() {
+//		String line = "mkyong-100@yahoo.com";
+//		//String regex = "(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b";
+//	    Matcher m = Pattern.compile(pattern).matcher(line);
+//	    m.find();
+//	    System.out.println(m.group(1));
+//	}
 }
