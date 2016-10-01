@@ -5,19 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Queue;
+
 import org.testng.annotations.Test;
 
 /* PROBLEM STATEMENT: there are N log files with format "timestamp task_id content". Write a program to 
  * read thru all these files and print log file content in chronological order for a specific task_id also
  * append file name to output log content
- * 
- * WHAT NEW I TRIED: in addition to our discussion. where this algorithm was developed in sequential with time complexity of O(mn), I developed this in O(m log n) using merge sort
- * where n is number of log files and m is average number of lines in log files.
- * 
- * this algorithm can still be improved to remove filepointer  from file pointer and list when specific pointer reach end of line they reach the end of line
- * 
- * Thanks
- * Sohan
  * */
 
 public class NLogFile {
@@ -30,6 +24,7 @@ public class NLogFile {
 		getAnalysisofTaskId(files, "t_id1");
 	}
 	
+	
 	@Test 
 	public void test2() throws FileNotFoundException {
 		String[] files = {"a.log","b.log","c.log"};
@@ -37,9 +32,8 @@ public class NLogFile {
 		getAnalysisofTaskId(files, "t_id7");
 	}
 	
-
+	
 	private void getAnalysisofTaskId(String [] files, String taskId) {
-		
 		filePointerList = new ArrayList<BufferedReader>();
 		try {
 			openFilesAndPutinFilePointerlist(files);
@@ -69,13 +63,19 @@ public class NLogFile {
 	
 
 	private int getsmallerTimestamp(int earliest, int earliest2) {
-		if(getTimeStamp(earliest) == 0) {
+		int timestamp1 = getTimeStamp(earliest);
+		int timestamp2 = getTimeStamp(earliest2);
+		
+		if(timestamp1 == 0 && timestamp2 == 0) {
+			return -1;
+		}
+		else if(timestamp1 == 0){
 			return earliest2;
 		}
-		else if(getTimeStamp(earliest2) == 0) {
+		else if(timestamp2 == 0){
 			return earliest;
 		}
-		else if(getTimeStamp(earliest) <= getTimeStamp(earliest2)) {
+		else if(timestamp1 <= timestamp2 ) {
 			return earliest;
 		}
 		else {
@@ -84,16 +84,21 @@ public class NLogFile {
 	}
 
 	private int getTimeStamp(int earliest) {
-		String line = readNexLine(earliest);
-		rewindFilePontersOneLine(earliest);
-		if(line !=null) {
-			/* using number instead of time stamp for easy testing. in real scenario I will 
-			get epoch time from string and use that to compare
-			*/
-			return Integer.parseInt(line.split(" ")[0]); 
+		if(earliest == -1) {
+			return  0;
 		}
 		else {
-			return 0;
+			String line = readNexLine(earliest);
+			rewindFilePontersOneLine(earliest);
+			if(line !=null) {
+				/* using number instead of time stamp for easy testing. in real scenario I will 
+				get epoch time from string and use that to compare
+				*/
+				return Integer.parseInt(line.split(" ")[0]); 
+			}
+			else {
+				return 0;
+			}
 		}
 	}
 
@@ -119,9 +124,8 @@ public class NLogFile {
 	}
 
 	private void printFileContent(int i, String[] files) {
-		String line = readNexLine(i);
-		if(line != null) {
-			System.out.println(line+": FILE_NAME ["+files[i]+"]");
+		if(i!= -1) {
+			System.out.println(readNexLine(i)+": FILE_NAME ["+files[i]+"]");
 		}
 	}
 
