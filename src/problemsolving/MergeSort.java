@@ -23,7 +23,7 @@ public class MergeSort {
 		}
 		else {
 			int mid = (a.length-1)/2;
-			return insertionSort(copyArray(a,0,mid),copyArray(a,mid+1,a.length-1));
+			return insertionSort(mergeSort(copyArray(a,0,mid)),mergeSort(copyArray(a,mid+1,a.length-1)));
 		}
 	}
 	
