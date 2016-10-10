@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import org.testng.annotations.Test;
 
-/*2+3*2
+/*21+32*2
 232*+
 
 1+2+3*4 =>  12+34*+
@@ -18,13 +18,13 @@ public class PostFix {
 	@Test
 	public void test1() {
 		System.out.println("");
-		convertToPostFix("2+3*2");
+		convertToPostFix("21+32*24");
 	}
 	
 	@Test
 	public void test2() {
 		System.out.println("");
-		convertToPostFix("1+2-3*4");
+		convertToPostFix("18+29-30*42");
 	}
 
 	void convertToPostFix(String input) {
