@@ -55,7 +55,7 @@ public class FunctionProblem {
 		else if (i==j) { // leaf element
 			return a[i];
 		}
-		else {  //recursively divide and conqur i.e. merge sort approach
+		else {  //recursively divide and conquer i.e. merge sort approach
 			int mid = (i+j)/2;
 			return multiply(a,i,mid)* multiply(a,mid+1,j);
 		}		
