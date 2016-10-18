@@ -1,7 +1,6 @@
 package problemsolving;
 
 import org.testng.annotations.Test;
-
 public class Gcd_Lcm {
 	@Test
 	public void gcd() {
@@ -14,6 +13,7 @@ public class Gcd_Lcm {
 	private int getLcm(int i,int j) {
 		return (i*j)/getGcd(i, j) ;
 	}
+	
 	private int getGcd(int i, int j) {
 		if(j==0) {
 			return i;
