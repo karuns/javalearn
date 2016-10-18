@@ -1,9 +1,13 @@
 package threads;
 
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 public class UsingRunnable {
-	@Test 
+
+	public static void main(String[] args) {
+		new UsingRunnable().implementThreadUsingRunnable();
+	}
+//	@Test
 	public void implementThreadUsingRunnable() {
 		System.out.println("Starting thread ...");
 		Thread t = new Thread( new Loader());
